@@ -1,8 +1,11 @@
 ## Laboratorio #4 – REST API Blueprints (Java 21 / Spring Boot 3.3.x)
 # Escuela Colombiana de Ingeniería – Arquitecturas de Software  
 ---
-# Link del Informe: 
+# Link del Informe LAB 03: 
 https://pruebacorreoescuelaingeduco-my.sharepoint.com/:w:/g/personal/keyla_serna-i_mail_escuelaing_edu_co/IQDL65x2ghirQI7Aq9qwxVnjAYTxgio9yiDPPKPLAv_5Hug?e=NFtJck
+
+# Link del Informe LAB 04: 
+https://pruebacorreoescuelaingeduco-my.sharepoint.com/:w:/g/personal/esteban_valente-a_mail_escuelaing_edu_co/IQCljLl_VmVkQpPfUeC7dWnHAQEdF-o7wNdcwtnBEMoNNj0?e=BkeCTX
 
 # Alumnos:
 ## - Keyla Yunuette Serna Illescas
