@@ -10,8 +10,8 @@ import jakarta.validation.constraints.NotBlank;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.prepost.PreAuthorize;
 
-import java.util.Map;
 import java.util.Set;
 
 @RestController
@@ -26,6 +26,7 @@ public class BlueprintsAPIController {
 
     // GET /api/v1/blueprints
     @GetMapping
+    @PreAuthorize("hasAuthority('SCOPE_blueprints.read')")
     public ResponseEntity<ApiResponse<Set<Blueprint>>> getAll() {
 
         Set<Blueprint> blueprints = services.getAllBlueprints();
@@ -41,6 +42,7 @@ public class BlueprintsAPIController {
 
     // GET /api/v1/blueprints/{author}
     @GetMapping("/{author}")
+    @PreAuthorize("hasAuthority('SCOPE_blueprints.read')")
     public ResponseEntity<ApiResponse<Set<Blueprint>>> byAuthor(
             @PathVariable String author) {
 
@@ -71,6 +73,7 @@ public class BlueprintsAPIController {
 
     // GET /api/v1/blueprints/{author}/{bpname}
     @GetMapping("/{author}/{bpname}")
+    @PreAuthorize("hasAuthority('SCOPE_blueprints.read')")
     public ResponseEntity<ApiResponse<Blueprint>> byAuthorAndName(
             @PathVariable String author,
             @PathVariable String bpname) {
@@ -102,6 +105,7 @@ public class BlueprintsAPIController {
 
     // POST /api/v1/blueprints
     @PostMapping
+    @PreAuthorize("hasAuthority('SCOPE_blueprints.write')")
     public ResponseEntity<ApiResponse<Void>> add(
             @Valid @RequestBody NewBlueprintRequest req) {
 
@@ -140,6 +144,7 @@ public class BlueprintsAPIController {
 
     // PUT /api/v1/blueprints/{author}/{bpname}/points
     @PutMapping("/{author}/{bpname}/points")
+    @PreAuthorize("hasAuthority('SCOPE_blueprints.write')")
     public ResponseEntity<ApiResponse<Void>> addPoint(
             @PathVariable String author,
             @PathVariable String bpname,
